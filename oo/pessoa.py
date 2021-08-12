@@ -1,18 +1,35 @@
 class Pessoa:
-    # atributos de instancia e objetos são criados
-    # através do método especial dunder init
 
-    def __init__(self, nome=None):
+      def __init__(self, *filhos, nome=None, idade=35):
+        self.idade = idade
         self.nome = nome
+        self.filhos = list(filhos)
 
-    def cumprimentar(self):
+      def cumprimentar(self):
         return f'Olá {id(self)}'
 
 
 if __name__ == '__main__':
-    p = Pessoa('Luciano')
-    print(Pessoa.cumprimentar(p))
-    print(id(p))
-    print(p.cumprimentar())
-    p.nome = 'Renzo'
-    print(p.nome)
+    heitor = Pessoa(nome ="Heitor")
+    max_wilson = Pessoa(heitor, nome="Max")
+    print(Pessoa.cumprimentar(max_wilson))
+    print(id(max_wilson))
+    print(max_wilson.cumprimentar())
+    print(max_wilson.nome)
+    print(max_wilson.idade)
+
+    for filho in max_wilson.filhos:
+        print(filho.nome)
+
+    max_wilson.sobrenome = "Neto"
+
+    print(max_wilson.sobrenome)
+    print(max_wilson.__dict__)
+    print(heitor.__dict__)
+
+    del max_wilson.filhos
+
+    print(max_wilson.__dict__)
+    print(heitor.__dict__)
+
+
