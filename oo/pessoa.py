@@ -1,11 +1,12 @@
 class Pessoa:
+    olhos = 2
 
-      def __init__(self, *filhos, nome=None, idade=35):
+    def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
 
-      def cumprimentar(self):
+    def cumprimentar(self):
         return f'Olá {id(self)}'
 
 
@@ -26,10 +27,24 @@ if __name__ == '__main__':
     print(max_wilson.sobrenome)
     print(max_wilson.__dict__)
     print(heitor.__dict__)
+    print(Pessoa.olhos)
+    print(heitor.olhos)
+    print(max_wilson.olhos)
+    heitor.olhos = 1
+    print("_________________")
+    print(Pessoa.olhos)
+    print(heitor.olhos)
+    print(max_wilson.olhos)
+    Pessoa.olhos = 3
+    print("_________________")
+    print((Pessoa.olhos))
+    print(heitor.olhos)
+    print(max_wilson.olhos)
+    del heitor.olhos
+    print("_________________")
+    print(Pessoa.olhos)
+    print(heitor.olhos)
+    print(max_wilson.olhos)
 
-    del max_wilson.filhos
-
-    print(max_wilson.__dict__)
-    print(heitor.__dict__)
 
 
