@@ -100,7 +100,7 @@ OESTE = "Oeste"
 
 
 class Direcao:
-    # d icionários abaixo fazem papel do if,elif, else que seriam usados
+    # dicionários abaixo fazem papel do if,elif, else que seriam usados
     # nas funções girar a direita e girar a esquerda
 
     rotacao_a_direita_dct = {
@@ -156,6 +156,4 @@ class Carro:
     def girar_a_esquerda(self):
         return self.girar_a_esquerda()
 
-if __name__ == '__main__':
-    pass
 

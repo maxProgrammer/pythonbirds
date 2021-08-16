@@ -7,12 +7,30 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
+
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributtos_de_classe(cls):
+            return f'{cls} - olhos {cls.olhos}'
+
+#sobreescrita de método
+class Homem(Pessoa):
+    def cumprimentar(self):
+        cumprimentar_da_classe_pai = super().cumprimentar()
+        return f'{cumprimentar_da_classe_pai}. Aperto de mão'
+
+# sobreescrita de atributo
+class Mutante(Pessoa):
+    olhos = 3
 
 
 if __name__ == '__main__':
-    heitor = Pessoa(nome ="Heitor")
-    max_wilson = Pessoa(heitor, nome="Max")
+    heitor = Mutante(nome="Heitor")
+    max_wilson = Homem(heitor, nome="Max")
     print(Pessoa.cumprimentar(max_wilson))
     print(id(max_wilson))
     print(max_wilson.cumprimentar())
@@ -35,9 +53,8 @@ if __name__ == '__main__':
     print(Pessoa.olhos)
     print(heitor.olhos)
     print(max_wilson.olhos)
-    Pessoa.olhos = 3
     print("_________________")
-    print((Pessoa.olhos))
+    print(Pessoa.olhos)
     print(heitor.olhos)
     print(max_wilson.olhos)
     del heitor.olhos
@@ -46,5 +63,14 @@ if __name__ == '__main__':
     print(heitor.olhos)
     print(max_wilson.olhos)
 
-
-
+    pessoa = Pessoa("Anonimo")
+    # função isinstace() retorna se uma função é igual a comparação
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    # se o objeto é do tipo de um classe que extende outra clase,
+    # o objeto será do tipo pai e avô
+    print(isinstance(heitor, Homem))
+    print(isinstance(heitor, Homem))
+    print(heitor.olhos)
+    print(heitor.cumprimentar())
+    print(max_wilson.cumprimentar())
