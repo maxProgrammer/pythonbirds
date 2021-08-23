@@ -4,7 +4,7 @@ Python Birds
 ===========
 
 Este aplicativo  utilizado no curso PythonPro tem o objetivo de possibilitar a  prática e
-esclarecimento de todos os conceitos básicos báscios da linguagem Python:
+esclarecimento de todos os conceitos básicos  da linguagem Python:
 * variáveis e tipos de dados
 * constantes
 * controle de fluxo
