@@ -760,5 +760,5 @@ class PassaroAmareloTests(PassaroBaseTests):
 
 
 if __name__=='__main__':
-    teste= AtorTestes()
+    teste = AtorTestes()
     teste.teste_colisao_entre_atores_ativos()
